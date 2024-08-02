@@ -1,0 +1,851 @@
+@import "bootstrap/scss/bootstrap";
+/* Leaflet CSS */
+@import "~leaflet/dist/leaflet.css";
+
+
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed; /* Make the navbar fixed */
+  top: 0; /* Align it to the top of the page */
+  width: 100%; /* Ensure the navbar spans the full width of the page */
+  z-index: 1000; /* Ensure it is above other elements */
+  background-color: #fff; /* Background color of the navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+}
+
+.navbar-brand img {
+  height: 100px; /* Adjust the height of the logo as needed */
+}
+
+.navbar-nav .nav-link {
+  color: #000; /* Adjust the color of the nav links as needed */
+}
+
+.navbar-nav .nav-link:hover {
+  color: rgba(35, 59, 40, 0.5); /* Adjust the hover color of the nav links as needed */
+}
+
+.navbar-toggler {
+  border-color: #000; /* Adjust the color of the toggle button border */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.form-control {
+  width: 200px; /* Adjust the width of the search input as needed */
+}
+
+.btn-outline-success {
+  color: rgba(35, 59, 40, 0.5);
+  border-color: rgba(35, 59, 40, 0.5);
+}
+
+.btn-outline-success:hover {
+  background-color: rgba(35, 59, 40, 0.5);
+  color: #fff;
+  border-color: rgba(35, 59, 40, 0.5);
+}
+
+/* Add padding to the body to avoid content being hidden behind the navbar */
+body {
+  padding-top: 100px; /* Adjust this value to the height of your navbar */
+}
+
+
+/* Hero Image */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-pringgading {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Dokumentasi  */
+.container-porto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.item {
+  flex: 1 1 calc(33.33% - 40px);
+  text-align: center;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.item img {
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Responsive layout */
+@media (max-width: 1200px) {
+  .item {
+      flex: 1 1 calc(50% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+      flex: 1 1 calc(100% - 40px);
+  }
+}
+/* Background Image */
+main, footer {
+  position: relative;
+  background-image: url('../public/assets/img/footer.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+main::before, footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer */
+footer{
+  background-color: #233B28;
+}
+
+
+.list-inline-item .btn-floating {
+  font-size: 20px; /* Font size for the social media icons */
+  color: white; /* Color for the social media icons */
+}
+
+.list-inline-item .btn-floating:hover {
+  color: #ffc107; /* Hover color for the social media icons */
+}
+
+.about-pringgading {
+  text-align: left;
+}
+
+/*KEGIATAN*/
+#activity-detail{
+  padding-top: 20px;
+}
+
+.activity-container {
+  padding-top: 20px;
+  margin: 20px;
+}
+
+.activity {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.activity img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px 5px 0 0;
+}
+
+.activity h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.activity p {
+  font-size: 1em;
+  color: #666;
+}
+
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+/* Styling untuk card layout landscape */
+.card-program {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.btn-download {
+  margin-top: 10px;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.card img {
+  width: 300px; /* Lebar gambar lebih kecil */
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Styling untuk video section */
+.video-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.video-section iframe {
+  width: 400px; /* Lebar video lebih kecil */
+  height: 300px;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.video-section button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Padding untuk teks di bagian Integrated Farming */
+#integrated-farming {
+  padding-top: 30px; /* Tambahkan padding di atas */
+}
+
+#integrated-farming p {
+  padding-top: 20px; /* Tambahkan padding di atas teks */
+}
+
+.col-auto{
+  margin-top: 20px;
+}
+
+
+/* Dropdown Pilih di fitur layanan */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.center-btn-group {
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-custom {
+  background: #EBEBEB;
+  border-color: rgba(225, 232, 100, 0.8);
+  color: #275900;
+}
+
+.btn-custom:hover, .btn-custom:focus {
+  background: rgba(212, 175, 54, 1);
+  border-color: rgba(212, 175, 54, 1);
+}
+
+.dropdown-item {
+  color: black;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background: rgba(212, 175, 54, 1);
+  color: white;
+}
+
+/*Jadwal layanan dan pembayaran */
+.container {
+  max-width: 900px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  border: 5px solid green;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card-img-top {
+  width: 180px; /* Adjust as necessary */
+  height: auto; /* Adjust as necessary */
+  margin: auto;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: green;
+}
+
+.btn-success {
+  background-color: green;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: darkgreen;
+}
+
+.payment-method-header {
+  background: linear-gradient(90deg, rgb(9, 72, 27) 0%, rgb(5, 133, 50) 50%, rgb(104, 183, 34) 100%);
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-methods {
+  width: 100%;
+  max-width: 400px;
+}
+
+.payment-method {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: black;
+  font-size: 1.25rem;
+  font-weight: bold;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.payment-method:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/*Layanan*/
+/* Layanan */
+.transaction-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-top: 50px; /* Adjust this value as needed */
+}
+
+.transaction-table table {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.transaction-table th, .transaction-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.transaction-table th {
+  background-color: #f4f4f4;
+}
+
+.transaction-table button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.subscription {
+  padding: 10px;
+  margin: 20px;
+}
+
+.subscription h2 {
+  color: #558a27;
+  font-size: 24px;
+}
+
+.subscription p {
+  color: #555;
+}
+
+.subscription-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.subscription-card {
+  border-radius: 10px;
+  padding: 30px;
+  text-align: left;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.subscription-card:hover {
+  transform: scale(1.05);
+}
+
+.subscription-card.normal {
+  background-color: #ffc107;
+}
+
+.subscription-card.vip {
+  background-color: #ff5722;
+}
+
+.subscription-card h3 {
+  margin-top: 0;
+}
+
+.subscription-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.subscription-card button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Dropdown */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.center-btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-custom {
+  background: #EBEBEB;
+  border-color: rgba(225, 232, 100, 0.8);
+  color: #275900;
+}
+
+.btn-custom:hover, .btn-custom:focus {
+  background: rgba(212, 175, 54, 1);
+  border-color: rgba(212, 175, 54, 1);
+}
+
+.dropdown-item {
+  color: black;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background: rgba(212, 175, 54, 1);
+  color: white;
+}
+
+/* Spacing between dropdown and table */
+.center-container + .transaction-table {
+  margin-top: 50px;
+}
+
+/* Map */
+.map {
+  width: 100%;
+  height: 500px;
+  margin-top: 20px;
+}
+
+.lokasi {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container-porto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  margin: 10px;
+  text-align: center;
+}
+
+/* Responsive Map */
+@media (max-width: 1200px) {
+  iframe {
+      width: 90%;
+      height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  iframe {
+      width: 100%;
+      height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 24px;
+  }
+
+  iframe {
+      width: 100%;
+      height: 300px;
+  }
+}
+
+.card-transaksi {
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+.detail-button-layanan {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.subscription-layanan {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.subscription-layanan h2 {
+  color: #4CAF50;
+}
+
+.subscription-layanan p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.subscription-layanan {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.option-layanan {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.text-layanan{
+  font-size: 30px;
+  
+}
+
+.select-button-layanan {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .subscription-layanan {
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .option-layanan {
+      width: 100%;
+  }
+
+  table, th, td {
+      font-size: 14px;
+  }
+  
+  .detail-button-layanan, .select-button-layanan {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+      padding: 10px;
+  }
+  
+  .subscription-layanan h2 {
+      font-size: 18px;
+  }
+
+  .subscription-layanan p {
+      font-size: 14px;
+  }
+
+  table, th, td {
+      font-size: 12px;
+  }
+  
+  .detail-button-layanan, .select-button-layanan {
+      padding: 6px 12px;
+      font-size: 12px;
+  }
+
+  .text-layanan {
+      flex-direction: column;
+  }
+}
+
+.card-header {
+  padding: 15px;
+  border-bottom: none;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.btn-group-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-group-toggle .btn {
+  flex: 1 1 calc(33.333% - 10px); /* Mengatur lebar tombol agar sejajar */
+  margin: 5px;
+  text-align: center;
+}
+
+.btn-group-toggle .btn input {
+  display: none;
+}
+
+.text-center h2, .text-center h3, .text-center h4 {
+  margin-bottom: 15px;
+}
+
+.text-center h3 {
+  margin-top: -10px;
+}
+
+button.btn {
+  width: 150px;
+  font-size: 16px;
+  padding: 10px;
+}
+.hero-section {
+  background: url('https://source.unsplash.com/1600x900/?village') no-repeat center center;
+  background-size: cover;
+  color: #000000;
+  padding: 5px;
+  text-align: center;
+}
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.content-section {
+  padding: 50px 15px;
+}
+.content-section h3 {
+  margin-top: 30px;
+  font-weight: bold;
+}
+.content-section p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+.content-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+.content-section ul li::before {
+  content: "✓";
+  color: #198754;
+  font-weight: bold;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Styling untuk halaman login, register, dan forgot password */
+/* Styling umum untuk halaman login */
+body.login {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Styling untuk gambar latar belakang */
+.bg-login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Menempatkan gambar di belakang konten */
+}
+
+/* Styling untuk container form */
+.container-xl {
+  background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih dengan opasitas */
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Styling untuk form floating */
+.form-floating {
+  margin-bottom: 15px;
+}
+
+.form-floating label {
+  padding: 0 5px;
+}
+
+.form-floating input, .form-floating button {
+  width: 100%;
+}
+
+.form-floating input {
+  margin-top: 10px;
+}
+
+.form-floating button {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-floating button:hover {
+  background-color: #555;
+}
+
+/* Styling untuk text form */
+.text-form {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forget-password-i {
+  color: #000;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Responsif untuk tampilan lebih kecil */
+@media (max-width: 576px) {
+  .container-xl {
+    width: 90%;
+    padding: 15px;
+  }
+}

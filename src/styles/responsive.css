@@ -1,0 +1,43 @@
+
+/* Media queries untuk responsif */
+@media (max-width: 768px) {
+    .video-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+  
+    .video-section button {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .subscription-card {
+        width: 300px;
+        padding: 40px;
+      }
+  }
+
+  @media (min-width: 1024px) {
+    .subscription-card {
+      width: 350px;
+      padding: 50px;
+    }
+  }
+/* Responsive styles for mobile */
+@media (max-width: 576px) {
+  .container-porto {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .item {
+      flex: 0 1 100%;
+      margin: 10px 0;
+  }
+
+  .item img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+  }
+}
